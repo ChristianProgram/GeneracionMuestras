@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^registro/alta_muestra.php$ registro/alta_muestra.php [L]
+RewriteRule ^registro/registro_muestra.php$ registro/registro_muestra.php [L]

@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS gestion_muestras;
+USE gestion_muestras;
+
+CREATE TABLE IF NOT EXISTS muestras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha_registro DATE NOT NULL,
+    numero_muestra INT NOT NULL,
+    origen ENUM('Fabrica de alimento', 'Bodega Medicamento', 'Laboratorio') NOT NULL,
+    nombre_muestra VARCHAR(255) NOT NULL,
+    fecha_caducidad DATE NOT NULL,
+    folio VARCHAR(255) NOT NULL UNIQUE,
+    ingredientes_activos TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS catalogo_muestras (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_muestra VARCHAR(255) NOT NULL,
+    ingredientes_activos TEXT NOT NULL
+);
